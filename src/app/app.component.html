@@ -1,0 +1,22 @@
+<table class="table">
+  <caption>List of users</caption>
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Username</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of data">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>
+        <a href="#" class="btn btn-info btn-sm" (click)="setUser(user)">
+          <fa name="info-circle"></fa>
+        </a></td>
+    </tr>
+  </tbody>
+</table>
+
+<app-user-details *ngIf="!!userId" [userId]="userId"></app-user-details>
